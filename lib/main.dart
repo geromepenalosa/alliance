@@ -1,4 +1,4 @@
-import 'package:alliance/home_screen.dart';
+import 'package:alliance/transfer_screen.dart';
 import 'package:alliance/login_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         canvasColor: Color(0xfff5f8fa),
       ),
-      home: const HomeScreen(),
+      home: const TransferScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
