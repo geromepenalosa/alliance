@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter/services.dart';
 
 /// This is the main application widget.
 class TransferScreen extends StatelessWidget {
@@ -206,12 +207,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                           ),
                           TextField(
                             style: TextStyle(
-                              fontSize: 12,
+                              fontSize: 15,
                               height: 1.0,
                             ),
                             decoration: InputDecoration(
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(35))),
+                            keyboardType: TextInputType.number,
                           )
                         ],
                       ),
@@ -228,14 +230,15 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                             width: 50.0,
                           ),
                           TextField(
-                            autofocus: true,
+                            maxLength: 12,
                             style: TextStyle(
-                              fontSize: 12,
+                              fontSize: 15,
                               height: 1.0,
                             ),
                             decoration: InputDecoration(
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(35))),
+                            keyboardType: TextInputType.number,
                           )
                         ],
                       ),
@@ -253,7 +256,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                           ),
                           TextField(
                             style: TextStyle(
-                              fontSize: 12,
+                              fontSize: 15,
                               height: 1.0,
                             ),
                             decoration: InputDecoration(
