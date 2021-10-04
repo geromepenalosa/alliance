@@ -27,6 +27,7 @@ class MyStatefulWidget extends StatefulWidget {
   @override
   State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
 }
+
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
   bool _extended = false;
@@ -121,3 +122,190 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                               ],
                             ),
                           ),
+                          Container(
+                            padding: EdgeInsets.only(top: 1),
+                            width: 200,
+                            height: 50,
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 140),
+                              child: ElevatedButton(
+                                onPressed: null,
+                                child: Icon(Icons.person),
+                                style: ButtonStyle(
+                                    shape: MaterialStateProperty.all(
+                                        RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10)))),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Container(
+                          padding: EdgeInsets.only(top: 10),
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            'Money Transfer',
+                          )),
+                      Row(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.only(top: 10),
+                            width: 310,
+                            height: 60,
+                            child: ElevatedButton(
+                              onPressed: null,
+                              child: Text('Selected Card        ***1234'),
+                              style: ButtonStyle(
+                                  shape: MaterialStateProperty.all(
+                                      RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10)))),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.only(top: 20),
+                          ),
+                          Row(children: [
+                            RichText(
+                              text: TextSpan(
+                                text: 'Receiver Details',
+                                style: TextStyle(
+                                    fontSize: 14, color: Color(0xff191A22)),
+                                // ignore: prefer_const_literals_to_create_immutables
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text:
+                                        '\nPlease enter the correct details below: ',
+                                    style: TextStyle(
+                                      color: Color(0xff191A22),
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ])
+                        ],
+                      ),
+                      Container(
+                          padding: EdgeInsets.only(top: 10),
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            'Amount To Be Transferred',
+                          )),
+                      Column(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.only(top: 10),
+                            width: 50.0,
+                          ),
+                          TextField(
+                            style: TextStyle(
+                              fontSize: 12,
+                              height: 1.0,
+                            ),
+                            decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(35))),
+                          )
+                        ],
+                      ),
+                      Container(
+                          padding: EdgeInsets.only(top: 20),
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Receiver's Account Number",
+                          )),
+                      Column(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.only(top: 10),
+                            width: 50.0,
+                          ),
+                          TextField(
+                            autofocus: true,
+                            style: TextStyle(
+                              fontSize: 12,
+                              height: 1.0,
+                            ),
+                            decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(35))),
+                          )
+                        ],
+                      ),
+                      Container(
+                          padding: EdgeInsets.only(top: 20),
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Receiver's Account Name",
+                          )),
+                      Column(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.only(top: 10),
+                            width: 50.0,
+                          ),
+                          TextField(
+                            style: TextStyle(
+                              fontSize: 12,
+                              height: 1.0,
+                            ),
+                            decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(35))),
+                          )
+                        ],
+                      ),
+                      Container(
+                          padding: EdgeInsets.only(top: 20),
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Note",
+                          )),
+                      Column(
+                        children: [TextField()],
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.only(top: 80),
+                          ),
+                          Container(width: 60),
+                          ElevatedButton(
+                            onPressed: () {},
+                            child: Text('<'),
+                            style: ButtonStyle(
+                                shape: MaterialStateProperty.all(
+                                    RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(15)))),
+                          ),
+                          Container(width: 60),
+                          ElevatedButton(
+                            onPressed: () {},
+                            child: Text('>'),
+                            style: ButtonStyle(
+                                shape: MaterialStateProperty.all(
+                                    RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(15)))),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
