@@ -94,3 +94,30 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               ],
             ),
             const VerticalDivider(thickness: 1, width: 4),
+            // Main Content
+            Expanded(
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          RichText(
+                            text: TextSpan(
+                              text: 'Marc Pacaldo',
+                              style: TextStyle(
+                                  fontSize: 14, color: Color(0xff191A22)),
+                              // ignore: prefer_const_literals_to_create_immutables
+                              children: <TextSpan>[
+                                TextSpan(
+                                  text: '\n@marcpacaldo',
+                                  style: TextStyle(
+                                    color: Color(0xff191A22),
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
