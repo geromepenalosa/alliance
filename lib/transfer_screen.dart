@@ -59,7 +59,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 NavigationRailDestination(
                   icon: Icon(
                     Icons.holiday_village_outlined,
-                    color: Color(0xffF5F8FA),
+                    color: Color(0xffF5F8FB),
                   ),
                   selectedIcon: Icon(
                     Icons.holiday_village,
