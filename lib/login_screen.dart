@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:alliance/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -25,8 +26,11 @@ class LoginScreen extends StatelessWidget {
                 width: double.infinity,
                 padding: EdgeInsets.only(top: 225, bottom: 10),
                 child: Text(
-                  'Welcome Back,',
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                  'Welcome back,',
+                  style: TextStyle(
+                      fontSize: 28,
+                      fontFamily: "Montserrat-Bold",
+                      fontWeight: FontWeight.w900),
                   textAlign: TextAlign.left,
                 ),
               ),
@@ -36,7 +40,10 @@ class LoginScreen extends StatelessWidget {
                 padding: EdgeInsets.only(bottom: 10),
                 child: Text(
                   'Please read the updated Terms\nand Conditions.',
-                  style: TextStyle(fontSize: 14),
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontFamily: 'Montserrat-Light',
+                      fontWeight: FontWeight.w300),
                   textAlign: TextAlign.left,
                 ),
               ),
@@ -44,8 +51,13 @@ class LoginScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 10),
                 child: TextField(
                   decoration: InputDecoration(
+                      focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Color(0xff191A22))),
+                      focusColor: Color(0xff191A22),
                       hintText: 'Username',
                       hintStyle: TextStyle(
+                        fontWeight: FontWeight.w200,
+                        fontFamily: "Montserrat-Light",
                         color: Color(0xff191A22).withOpacity(0.5),
                       )),
                   obscureText: false,
@@ -54,9 +66,15 @@ class LoginScreen extends StatelessWidget {
               Padding(padding: EdgeInsets.all(8)),
               TextField(
                 decoration: InputDecoration(
+                    focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xff191A22))),
+                    filled: false,
                     hintText: 'Password',
-                    hintStyle:
-                        TextStyle(color: Color(0xff191A22).withOpacity(0.5))),
+                    hintStyle: TextStyle(
+                      fontWeight: FontWeight.w200,
+                      fontFamily: "Montserrat-Light",
+                      color: Color(0xff191A22).withOpacity(0.5),
+                    )),
                 obscureText: true,
               ),
               Row(
@@ -77,8 +95,7 @@ class LoginScreen extends StatelessWidget {
                                     fontSize: 12,
                                     decoration: TextDecoration.underline),
                                 recognizer: TapGestureRecognizer()
-                                  ..onTap =
-                                      () => print('Click here is tapped')),
+                                  ..onTap = () => print('Under Construction')),
                           ],
                         ),
                       )),
@@ -87,10 +104,22 @@ class LoginScreen extends StatelessWidget {
                     padding: EdgeInsets.only(left: 30, top: 37),
                     child: ElevatedButton(
                         onPressed: () {
-                          print('Logging In...');
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomeScreen()),
+                          );
                         },
-                        child: Text('Sign in'),
+                        child: Text(
+                          'Sign in',
+                          style: TextStyle(
+                              fontSize: 15,
+                              fontFamily: 'Montserrat-Bold',
+                              fontWeight: FontWeight.w600),
+                        ),
                         style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Color(0xff191A22)),
                             shape: MaterialStateProperty.all(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20))),

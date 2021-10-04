@@ -30,6 +30,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  animated_splash_screen :
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -51,13 +53,35 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat-Regular.ttf
+        - asset: assets/fonts/Montserrat-Bold.ttf
+        - asset: assets/fonts/Montserrat-SemiBold.ttf
+        - asset: assets/fonts/Montserrat-Light.ttf
+        - asset: assets/fonts/Montserrat-ExtraBold.ttf
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
   assets:
   - assets/images/
+  
+          
+
+
+
+   
+
+# flutter_native_splash :
+#   image: assets/images/Alliance_Logo.png
+#   color: "F5F8FA"
+#   android: true
+#   fill: true
+
+
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:
