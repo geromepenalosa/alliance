@@ -1,11 +1,8 @@
-<<<<<<< HEAD
 // ignore_for_file: prefer_const_constructors
 
 import 'package:alliance/authetication_screen.dart';
 import 'package:alliance/home_screen.dart';
-=======
 import 'package:alliance/transfer_screen.dart';
->>>>>>> e6e83c7602e4db3dd54309e94e2e14fd7002f8c9
 import 'package:alliance/login_screen.dart';
 import 'package:alliance/splash_screen.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
@@ -27,7 +24,6 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Montserrat',
         canvasColor: Color(0xfff5f8fa),
       ),
-<<<<<<< HEAD
       home: AnimatedSplashScreen(
         splash: Container(
           decoration: BoxDecoration(
@@ -39,9 +35,6 @@ class MyApp extends StatelessWidget {
         ),
         nextScreen: AuthenticationScreen(),
       ),
-=======
-      home: const TransferScreen(),
->>>>>>> e6e83c7602e4db3dd54309e94e2e14fd7002f8c9
       debugShowCheckedModeBanner: false,
     );
   }
