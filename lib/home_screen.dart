@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:alliance/transfer_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -220,7 +221,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                               borderRadius:
                                                   BorderRadius.circular(15))))),
                               ElevatedButton(
-                                  onPressed: null,
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              TransferScreen()),
+                                    );
+                                  },
                                   child: Text('Transfer'),
                                   style: ButtonStyle(
                                       shape: MaterialStateProperty.all(
