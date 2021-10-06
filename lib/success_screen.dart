@@ -120,7 +120,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                             text: 'Transfer \nSuccessful',
                             style: TextStyle(
                                 fontSize: 25,
-                                color: Color(0xff191A22),
+                                color: Color(0xff1473fb),
                                 fontWeight: FontWeight.w900),
                             // ignore: prefer_const_literals_to_create_immutables
                           ),
@@ -139,6 +139,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                             child: Column(
                               // ignore: prefer_const_literals_to_create_immutables
                               children: [
+                                  
                                 Container(
                                     padding: EdgeInsets.only(top: 10),
                                     alignment: Alignment.centerLeft,
@@ -146,8 +147,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                         text: TextSpan(
                                       text: 'Transfer Details',
                                       style: TextStyle(
-                                          fontSize: 15, color: Colors.black),
+                                          fontSize: 16, color: Colors.black, fontWeight: FontWeight.w700,),
                                     ))),
+                                    
                                 Container(
                                     alignment: Alignment.centerLeft,
                                     child: RichText(
@@ -155,8 +157,17 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                       text:
                                           'Please enter the correct details below.',
                                       style: TextStyle(
-                                          fontSize: 12, color: Colors.black54),
+                                          fontSize: 12, color: Colors.black87),
                                     ))),
+                                Container(
+                                    padding: EdgeInsets.only(top: 15),
+                                    alignment: Alignment.centerLeft,
+                                    child: RichText(
+                                        text: TextSpan(
+                                      text: "Amount Transferred",
+                                      style: TextStyle(
+                                          fontSize: 14, color: Color(0xff1473fb)),
+                                    ))),    
                                 Container(
                                     padding: EdgeInsets.only(top: 15),
                                     alignment: Alignment.centerLeft,
@@ -164,7 +175,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                         text: TextSpan(
                                       text: "Receiver's Account \nNumber",
                                       style: TextStyle(
-                                          fontSize: 14, color: Colors.black),
+                                          fontSize: 14, color: Color(0xff1473fb)),
                                     ))),
                                 Container(
                                     padding: EdgeInsets.only(top: 15),
@@ -173,7 +184,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                         text: TextSpan(
                                       text: "Receiver's Account \nName",
                                       style: TextStyle(
-                                          fontSize: 14, color: Colors.black),
+                                          fontSize: 14, color: Color(0xff1473fb)),
                                     ))),
                                 Container(
                                     padding: EdgeInsets.only(top: 15),
@@ -182,7 +193,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                         text: TextSpan(
                                       text: 'Note',
                                       style: TextStyle(
-                                          fontSize: 14, color: Colors.black),
+                                          fontSize: 14, color: Color(0xff1473fb)),
                                     ))),
                                 Container(
                                     padding: EdgeInsets.only(top: 15),
@@ -191,7 +202,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                         text: TextSpan(
                                       text: 'Transaction \nNumber',
                                       style: TextStyle(
-                                          fontSize: 14, color: Colors.black),
+                                          fontSize: 14, color: Color(0xff1473fb)),
                                     ))),
                                 Container(
                                     padding: EdgeInsets.only(top: 15),
@@ -200,7 +211,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                         text: TextSpan(
                                       text: 'Transaction \nDate',
                                       style: TextStyle(
-                                          fontSize: 14, color: Colors.black),
+                                          fontSize: 14, color: Color(0xff1473fb)),
                                     ))),
                                 Container(
                                     padding: EdgeInsets.only(top: 15),
@@ -209,7 +220,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                         text: TextSpan(
                                       text: 'Current Balance',
                                       style: TextStyle(
-                                          fontSize: 14, color: Colors.black),
+                                          fontSize: 14, color: Color(0xff1473fb)),
                                     ))),
                               ],
                             ),
@@ -265,7 +276,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                     padding: EdgeInsets.only(top: 10),
                                     alignment: Alignment.centerLeft,
                                     child: Text('XXXX XXXX XXXX 1234')),
-                                Container(
+                                            Container(
                                     padding: EdgeInsets.only(top: 40),
                                     alignment: Alignment.bottomRight,
                                     child: Text('02/22'))
@@ -287,7 +298,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                           width: 310,
                           height: 60,
                           child: ElevatedButton(
-                            onPressed: null,
+                            onPressed: (){},
                             child: Column(
                               // ignore: prefer_const_literals_to_create_immutables
                               children: [
@@ -299,7 +310,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                         text: '>',
                                         style: TextStyle(
                                             fontSize: 30,
-                                            color: Colors.black26),
+                                            color: Colors.white),
                                         // ignore: prefer_const_literals_to_create_immutables
                                       ),
                                     )),
@@ -309,7 +320,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                 shape: MaterialStateProperty.all(
                                     RoundedRectangleBorder(
                                         borderRadius:
-                                            BorderRadius.circular(10)))),
+                                            BorderRadius.circular(20)))),
                           ),
                         ),
                       ],
