@@ -371,16 +371,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                       )),
                                 ],
                               ),
-<<<<<<< HEAD
-                              style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all(
-                                      Color(0xffF5F8FA)),
-                                  shape: MaterialStateProperty.all(
-                                      RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(20)))),
-                            ),
-=======
                               ElevatedButton(
                                   onPressed: null,
                                   child: Text('Deposit'),
