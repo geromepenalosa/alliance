@@ -110,7 +110,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                             TextStyle(color: Color(0xffFFC835), fontSize: 10),
                       )),
                   NavigationRailDestination(
-                    padding: EdgeInsets.only(top: 5),
                     icon:
                         Icon(Icons.settings_outlined, color: Color(0xffF5F8FA)),
                     selectedIcon: Icon(
@@ -130,112 +129,127 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          RichText(
-                            text: TextSpan(
-                              text: 'John Doe',
-                              style: TextStyle(
-                                  fontSize: 14,
-                                  color: Color(0xff191A22),
-                                  fontWeight: FontWeight.w900),
-                              // ignore: prefer_const_literals_to_create_immutables
-                              children: <TextSpan>[
-                                TextSpan(
-                                  text: '\n@johndoe',
-                                  style: TextStyle(
+                  child: Container(
+                    constraints: BoxConstraints(
+                      maxHeight: MediaQuery.of(context).size.height,
+                      maxWidth: MediaQuery.of(context).size.width,
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            RichText(
+                              text: TextSpan(
+                                text: 'John Doe',
+                                style: TextStyle(
+                                    fontSize: 14,
                                     color: Color(0xff191A22),
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            alignment: Alignment.topRight,
-                            padding: EdgeInsets.only(top: 1),
-                            width: 250,
-                            height: 50,
-                            child: ElevatedButton(
-                              onPressed: () {},
-                              child: Icon(
-                                Icons.person,
-                                color: Color(0xff191A22),
-                              ),
-                              style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all(
-                                      Color(0xffF5F8FA)),
-                                  shape: MaterialStateProperty.all(
-                                      RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(10)))),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Container(
-                          padding: EdgeInsets.only(top: 20),
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            'Your Card',
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Montserrat-SemiBold',
-                                color: Color(0xff191A22)),
-                          )),
-                      Row(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.only(top: 10, bottom: 5),
-                            width: 310,
-                            height: 140,
-                            child: ElevatedButton(
-                              onPressed: () {},
-                              child: Column(
+                                    fontWeight: FontWeight.w900),
                                 // ignore: prefer_const_literals_to_create_immutables
-                                children: [
-                                  Container(
-                                      padding: EdgeInsets.only(top: 15),
-                                      alignment: Alignment.centerLeft,
-                                      child: Text(
-                                        'XXXX XXXX XXXX 1234',
-                                        style: TextStyle(
-                                            fontSize: 15,
-                                            color: Color(0xff1473FB),
-                                            fontFamily: 'Montserrat-SemiBold',
-                                            fontWeight: FontWeight.w600),
-                                      )),
-                                  Container(
-                                      padding: EdgeInsets.only(top: 60),
-                                      alignment: Alignment.bottomRight,
-                                      child: Text(
-                                        '02/22',
-                                        style: TextStyle(
-                                            fontSize: 15,
-                                            color: Color(0xff1473FB),
-                                            fontFamily: 'Montserrat-SemiBold',
-                                            fontWeight: FontWeight.w600),
-                                      ))
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: '\n@johndoe',
+                                    style: TextStyle(
+                                      color: Color(0xff191A22),
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
                                 ],
                               ),
-                              style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all(
-                                      Color(0xffF5F8FA)),
-                                  shape: MaterialStateProperty.all(
-                                      RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(20)))),
                             ),
-                          )
-                        ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 5),
-                        child: Column(
+                            Container(
+                              constraints: BoxConstraints(
+                                maxHeight: MediaQuery.of(context).size.height,
+                                maxWidth:
+                                    MediaQuery.of(context).size.width / 1.66,
+                              ),
+                              alignment: Alignment.topRight,
+                              padding: EdgeInsets.only(top: 1),
+                              width: 250,
+                              height: 50,
+                              child: ElevatedButton(
+                                onPressed: () {},
+                                child: Icon(
+                                  Icons.person,
+                                  color: Color(0xff191A22),
+                                ),
+                                style: ButtonStyle(
+                                    backgroundColor: MaterialStateProperty.all(
+                                        Color(0xffF5F8FA)),
+                                    shape: MaterialStateProperty.all(
+                                        RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10)))),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 60,
+                        ),
+                        Container(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              'Your Card',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700,
+                                  fontFamily: 'Montserrat-SemiBold',
+                                  color: Color(0xff191A22)),
+                            )),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 90,
+                        ),
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width / 1.33,
+                              height: 140,
+                              child: ElevatedButton(
+                                onPressed: () {},
+                                child: Column(
+                                  // ignore: prefer_const_literals_to_create_immutables
+                                  children: [
+                                    Container(
+                                        padding: EdgeInsets.only(top: 15),
+                                        alignment: Alignment.centerLeft,
+                                        child: Text(
+                                          'XXXX XXXX XXXX 1234',
+                                          style: TextStyle(
+                                              fontSize: 15,
+                                              color: Color(0xff1473FB),
+                                              fontFamily: 'Montserrat-SemiBold',
+                                              fontWeight: FontWeight.w600),
+                                        )),
+                                    Container(
+                                        padding: EdgeInsets.only(top: 60),
+                                        alignment: Alignment.bottomRight,
+                                        child: Text(
+                                          '02/22',
+                                          style: TextStyle(
+                                              fontSize: 15,
+                                              color: Color(0xff1473FB),
+                                              fontFamily: 'Montserrat-SemiBold',
+                                              fontWeight: FontWeight.w600),
+                                        ))
+                                  ],
+                                ),
+                                style: ButtonStyle(
+                                    backgroundColor: MaterialStateProperty.all(
+                                        Color(0xffF5F8FA)),
+                                    shape: MaterialStateProperty.all(
+                                        RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(20)))),
+                              ),
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 130,
+                        ),
+                        Column(
                           children: [
                             // ignore: prefer_const_literals_to_create_immutables
                             Row(
@@ -313,184 +327,206 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                             )
                           ],
                         ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.only(top: 10),
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          'Available Balance',
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700,
-                              fontFamily: 'Montserrat-SemiBold',
-                              color: Color(0xff191A22)),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 90,
                         ),
-                      ),
-                      Row(
-                        children: [
-                          Container(
-                              padding: EdgeInsets.only(top: 10),
-                              width: 310,
-                              height: 130,
-                              child: ElevatedButton(
-                                onPressed: () {},
-                                child: Column(
-                                  // ignore: prefer_const_literals_to_create_immutables
-                                  children: [
-                                    Container(
-                                        padding: EdgeInsets.only(top: 10),
-                                        alignment: Alignment.centerLeft,
-                                        child: RichText(
-                                          text: TextSpan(
-                                            text: '500,000',
-                                            style: TextStyle(
-                                                fontSize: 60,
-                                                color: Color(0xff1473FB),
-                                                fontFamily:
-                                                    'Montserrat-SemiBold',
-                                                fontWeight: FontWeight.w600),
-                                            // ignore: prefer_const_literals_to_create_immutables
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                text:
-                                                    '\n   Estimated on all currencies',
-                                                style: TextStyle(
-                                                  fontFamily:
-                                                      'Montserrat-Light',
-                                                  color: Colors.black38,
-                                                  fontWeight: FontWeight.w300,
-                                                  fontSize: 14,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        )),
-                                  ],
-                                ),
-                                style: ButtonStyle(
-                                    backgroundColor: MaterialStateProperty.all(
-                                        Color(0xffF5F8FA)),
-                                    shape: MaterialStateProperty.all(
-                                        RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(20)))),
-                              ))
-                        ],
-                      ),
-                      Container(
-                        padding: EdgeInsets.only(top: 10, bottom: 5),
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          'Recent Activity',
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700,
-                              fontFamily: 'Montserrat-SemiBold',
-                              color: Color(0xff191A22)),
+                        Container(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            'Available Balance',
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700,
+                                fontFamily: 'Montserrat-SemiBold',
+                                color: Color(0xff191A22)),
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                          height: 154,
-                          child: Card(
-                            color: Color(0xFFF5F8FA),
-                            shape: RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(15))),
-                            child: ListView.builder(
-                                scrollDirection: Axis.vertical,
-                                itemCount: homeScreenTransaction.length,
-                                itemBuilder: (context, index) {
-                                  return Padding(
-                                    padding: const EdgeInsets.all(5),
-                                    child: Container(
-                                      child: Card(
-                                          color: Color(0xFFF5F8FA),
-                                          child: Column(
-                                            children: [
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsets.all(5),
-                                                    child: Row(
-                                                      children: [
-                                                        ElevatedButton(
-                                                          onPressed: () {},
-                                                          child: Icon(
-                                                              Icons.person,
-                                                              color:
-                                                                  Colors.white),
-                                                          style: ElevatedButton
-                                                              .styleFrom(
-                                                            shape:
-                                                                CircleBorder(),
-                                                            padding:
-                                                                EdgeInsets.all(
-                                                                    8),
-                                                            primary: Color(
-                                                                0xff1473FB),
-                                                          ),
-                                                        ),
-                                                        Column(
-                                                          children: [
-                                                            Text(
-                                                              homeScreenTransaction[
-                                                                      index]
-                                                                  .name,
-                                                              style: TextStyle(
-                                                                  fontFamily:
-                                                                      'Montserrat',
-                                                                  fontSize: 12,
-                                                                  color: Colors
-                                                                      .black),
-                                                            ),
-                                                            Text(
-                                                              homeScreenTransaction[
-                                                                      index]
-                                                                  .trasactionDate,
-                                                              style: TextStyle(
-                                                                  fontFamily:
-                                                                      'Montserrat',
-                                                                  fontSize: 12,
-                                                                  color: Colors
-                                                                      .black),
-                                                            ),
-                                                            Text(
-                                                              homeScreenTransaction[
-                                                                      index]
-                                                                  .transactionType,
-                                                              style: TextStyle(
-                                                                  fontFamily:
-                                                                      'Montserrat',
-                                                                  fontSize: 12,
-                                                                  color: Colors
-                                                                      .black),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Column(
-                                                          children: [
-                                                            Text(homeScreenTransaction[
-                                                                    index]
-                                                                .transactionAmount
-                                                                .toString())
-                                                          ],
-                                                        )
-                                                      ],
-                                                    ),
-                                                  )
-                                                ],
-                                              )
-                                            ],
-                                          )),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 150,
+                        ),
+                        Row(
+                          children: [
+                            SizedBox(
+                              child: SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width / 1.4,
+                                  height: 130,
+                                  child: ElevatedButton(
+                                    onPressed: () {},
+                                    child: Column(
                                       // ignore: prefer_const_literals_to_create_immutables
+                                      children: [
+                                        Container(
+                                            padding: EdgeInsets.only(top: 10),
+                                            alignment: Alignment.centerLeft,
+                                            child: RichText(
+                                              text: TextSpan(
+                                                text: '500,000',
+                                                style: TextStyle(
+                                                    fontSize: 60,
+                                                    color: Color(0xff1473FB),
+                                                    fontFamily:
+                                                        'Montserrat-SemiBold',
+                                                    fontWeight:
+                                                        FontWeight.w600),
+                                                // ignore: prefer_const_literals_to_create_immutables
+                                                children: <TextSpan>[
+                                                  TextSpan(
+                                                    text:
+                                                        '\n   Estimated on all currencies',
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          'Montserrat-Light',
+                                                      color: Colors.black38,
+                                                      fontWeight:
+                                                          FontWeight.w300,
+                                                      fontSize: 14,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            )),
+                                      ],
                                     ),
-                                  );
-                                }),
-                          ))
-                    ],
+                                    style: ButtonStyle(
+                                        backgroundColor:
+                                            MaterialStateProperty.all(
+                                                Color(0xffF5F8FA)),
+                                        shape: MaterialStateProperty.all(
+                                            RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        20)))),
+                                  )),
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 90,
+                        ),
+                        Container(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            'Recent Activity',
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700,
+                                fontFamily: 'Montserrat-SemiBold',
+                                color: Color(0xff191A22)),
+                          ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 180,
+                        ),
+                        SizedBox(
+                            height: MediaQuery.of(context).size.height / 5,
+                            width: MediaQuery.of(context).size.width,
+                            child: Card(
+                              color: Color(0xFFF5F8FA),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(15))),
+                              child: ListView.builder(
+                                  scrollDirection: Axis.vertical,
+                                  itemCount: homeScreenTransaction.length,
+                                  itemBuilder: (context, index) {
+                                    return Padding(
+                                      padding: const EdgeInsets.all(5),
+                                      child: Container(
+                                        child: Card(
+                                            color: Color(0xFFF5F8FA),
+                                            child: Column(
+                                              children: [
+                                                Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              5),
+                                                      child: Row(
+                                                        children: [
+                                                          ElevatedButton(
+                                                            onPressed: () {},
+                                                            child: Icon(
+                                                                Icons.person,
+                                                                color: Colors
+                                                                    .white),
+                                                            style:
+                                                                ElevatedButton
+                                                                    .styleFrom(
+                                                              shape:
+                                                                  CircleBorder(),
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(8),
+                                                              primary: Color(
+                                                                  0xff1473FB),
+                                                            ),
+                                                          ),
+                                                          Column(
+                                                            children: [
+                                                              Text(
+                                                                homeScreenTransaction[
+                                                                        index]
+                                                                    .name,
+                                                                style: TextStyle(
+                                                                    fontFamily:
+                                                                        'Montserrat',
+                                                                    fontSize:
+                                                                        12,
+                                                                    color: Colors
+                                                                        .black),
+                                                              ),
+                                                              Text(
+                                                                homeScreenTransaction[
+                                                                        index]
+                                                                    .trasactionDate,
+                                                                style: TextStyle(
+                                                                    fontFamily:
+                                                                        'Montserrat',
+                                                                    fontSize:
+                                                                        12,
+                                                                    color: Colors
+                                                                        .black),
+                                                              ),
+                                                              Text(
+                                                                homeScreenTransaction[
+                                                                        index]
+                                                                    .transactionType,
+                                                                style: TextStyle(
+                                                                    fontFamily:
+                                                                        'Montserrat',
+                                                                    fontSize:
+                                                                        12,
+                                                                    color: Colors
+                                                                        .black),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Column(
+                                                            children: [
+                                                              Text(homeScreenTransaction[
+                                                                      index]
+                                                                  .transactionAmount
+                                                                  .toString())
+                                                            ],
+                                                          )
+                                                        ],
+                                                      ),
+                                                    )
+                                                  ],
+                                                )
+                                              ],
+                                            )),
+                                        // ignore: prefer_const_literals_to_create_immutables
+                                      ),
+                                    );
+                                  }),
+                            ))
+                      ],
+                    ),
                   ),
                 ),
               )

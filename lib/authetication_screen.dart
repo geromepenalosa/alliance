@@ -72,6 +72,9 @@ class AuthenticationScreen extends StatelessWidget {
               Row(
                 children: [
                   Container(
+                    constraints: BoxConstraints(
+                      maxWidth: MediaQuery.of(context).size.width / 1.2,
+                    ),
                     width: 350,
                     child: ElevatedButton(
                         onPressed: () {
@@ -105,6 +108,9 @@ class AuthenticationScreen extends StatelessWidget {
                 children: [
                   Container(
                     padding: EdgeInsets.only(top: 2),
+                    constraints: BoxConstraints(
+                      maxWidth: MediaQuery.of(context).size.width / 1.2,
+                    ),
                     width: 350,
                     child: ElevatedButton(
                         onPressed: () {
@@ -123,7 +129,7 @@ class AuthenticationScreen extends StatelessWidget {
                                 MaterialStateProperty.all(Color(0xff191A22)),
                             shape: MaterialStateProperty.all(
                                 RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15))),
+                                    borderRadius: BorderRadius.circular(13))),
                             padding:
                                 MaterialStateProperty.all(EdgeInsets.all(15)),
                             elevation: MaterialStateProperty.all(0))),

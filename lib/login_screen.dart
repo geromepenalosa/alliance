@@ -123,11 +123,11 @@ class LoginScreen extends StatelessWidget {
                           ),
                         )),
                     SizedBox(
-                      width: MediaQuery.of(context).size.height / 13,
+                      width: MediaQuery.of(context).size.width / 7,
                       height: MediaQuery.of(context).size.height / 7,
                     ),
                     Container(
-                      width: 150,
+                      width: 120,
                       child: ElevatedButton(
                           onPressed: () {
                             if (formGlobalKey.currentState!.validate()) {
