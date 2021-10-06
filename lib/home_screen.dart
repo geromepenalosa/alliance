@@ -1,6 +1,12 @@
 // ignore_for_file: prefer_const_constructors
+<<<<<<< HEAD
 import 'package:alliance/home_screen_transactions.dart';
 import 'package:alliance/transfer_screen.dart';
+=======
+
+import 'package:alliance/transfer_screen.dart';
+import 'package:flutter/gestures.dart';
+>>>>>>> d559854fed21937c12ade930b629907bc1faac0e
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
@@ -365,6 +371,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                       )),
                                 ],
                               ),
+<<<<<<< HEAD
                               style: ButtonStyle(
                                   backgroundColor: MaterialStateProperty.all(
                                       Color(0xffF5F8FA)),
@@ -373,6 +380,32 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                           borderRadius:
                                               BorderRadius.circular(20)))),
                             ),
+=======
+                              ElevatedButton(
+                                  onPressed: null,
+                                  child: Text('Deposit'),
+                                  style: ButtonStyle(
+                                      shape: MaterialStateProperty.all(
+                                          RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(15))))),
+                              ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              TransferScreen()),
+                                    );
+                                  },
+                                  child: Text('Transfer'),
+                                  style: ButtonStyle(
+                                      shape: MaterialStateProperty.all(
+                                          RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(15))))),
+                            ],
+>>>>>>> d559854fed21937c12ade930b629907bc1faac0e
                           )
                         ],
                       ),
