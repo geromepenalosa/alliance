@@ -1,12 +1,6 @@
 // ignore_for_file: prefer_const_constructors
-<<<<<<< HEAD
 import 'package:alliance/home_screen_transactions.dart';
 import 'package:alliance/transfer_screen.dart';
-=======
-
-import 'package:alliance/transfer_screen.dart';
-import 'package:flutter/gestures.dart';
->>>>>>> d559854fed21937c12ade930b629907bc1faac0e
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
@@ -335,68 +329,52 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                       Row(
                         children: [
                           Container(
-                            padding: EdgeInsets.only(top: 10),
-                            width: 310,
-                            height: 130,
-                            child: ElevatedButton(
-                              onPressed: () {},
-                              child: Column(
-                                // ignore: prefer_const_literals_to_create_immutables
-                                children: [
-                                  Container(
-                                      padding: EdgeInsets.only(top: 10),
-                                      alignment: Alignment.centerLeft,
-                                      child: RichText(
-                                        text: TextSpan(
-                                          text: '500,000',
-                                          style: TextStyle(
-                                              fontSize: 60,
-                                              color: Color(0xff1473FB),
-                                              fontFamily: 'Montserrat-SemiBold',
-                                              fontWeight: FontWeight.w600),
-                                          // ignore: prefer_const_literals_to_create_immutables
-                                          children: <TextSpan>[
-                                            TextSpan(
-                                              text:
-                                                  '\n   Estimated on all currencies',
-                                              style: TextStyle(
-                                                fontFamily: 'Montserrat-Light',
-                                                color: Colors.black38,
-                                                fontWeight: FontWeight.w300,
-                                                fontSize: 14,
+                              padding: EdgeInsets.only(top: 10),
+                              width: 310,
+                              height: 130,
+                              child: ElevatedButton(
+                                onPressed: () {},
+                                child: Column(
+                                  // ignore: prefer_const_literals_to_create_immutables
+                                  children: [
+                                    Container(
+                                        padding: EdgeInsets.only(top: 10),
+                                        alignment: Alignment.centerLeft,
+                                        child: RichText(
+                                          text: TextSpan(
+                                            text: '500,000',
+                                            style: TextStyle(
+                                                fontSize: 60,
+                                                color: Color(0xff1473FB),
+                                                fontFamily:
+                                                    'Montserrat-SemiBold',
+                                                fontWeight: FontWeight.w600),
+                                            // ignore: prefer_const_literals_to_create_immutables
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                text:
+                                                    '\n   Estimated on all currencies',
+                                                style: TextStyle(
+                                                  fontFamily:
+                                                      'Montserrat-Light',
+                                                  color: Colors.black38,
+                                                  fontWeight: FontWeight.w300,
+                                                  fontSize: 14,
+                                                ),
                                               ),
-                                            ),
-                                          ],
-                                        ),
-                                      )),
-                                ],
-                              ),
-                              ElevatedButton(
-                                  onPressed: null,
-                                  child: Text('Deposit'),
-                                  style: ButtonStyle(
-                                      shape: MaterialStateProperty.all(
-                                          RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(15))))),
-                              ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              TransferScreen()),
-                                    );
-                                  },
-                                  child: Text('Transfer'),
-                                  style: ButtonStyle(
-                                      shape: MaterialStateProperty.all(
-                                          RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(15))))),
-                            ],
->>>>>>> d559854fed21937c12ade930b629907bc1faac0e
-                          )
+                                            ],
+                                          ),
+                                        )),
+                                  ],
+                                ),
+                                style: ButtonStyle(
+                                    backgroundColor: MaterialStateProperty.all(
+                                        Color(0xffF5F8FA)),
+                                    shape: MaterialStateProperty.all(
+                                        RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(20)))),
+                              ))
                         ],
                       ),
                       Container(
