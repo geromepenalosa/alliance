@@ -13,6 +13,10 @@ class AuthenticationScreen extends StatelessWidget {
       resizeToAvoidBottomInset: true,
       body: SingleChildScrollView(
         child: Container(
+          constraints: BoxConstraints(
+            maxHeight: MediaQuery.of(context).size.height,
+            maxWidth: MediaQuery.of(context).size.width,
+          ),
           decoration: BoxDecoration(
               image: DecorationImage(
                   image:
@@ -23,7 +27,6 @@ class AuthenticationScreen extends StatelessWidget {
             children: [
               Container(
                 width: double.infinity,
-                padding: EdgeInsets.only(bottom: 40),
                 child: RichText(
                   text: TextSpan(
                     text: 'ALLIANCE',
@@ -47,10 +50,12 @@ class AuthenticationScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 17,
+              ),
               // ignore: prefer_const_constructors
               Container(
                 width: double.infinity,
-                padding: EdgeInsets.only(bottom: 150),
                 child: Text(
                   'Your\nBanking\nCompanion',
                   style: TextStyle(
@@ -60,12 +65,14 @@ class AuthenticationScreen extends StatelessWidget {
                   textAlign: TextAlign.left,
                 ),
               ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 3,
+              ),
 
               Row(
                 children: [
                   Container(
                     width: 350,
-                    padding: EdgeInsets.only(top: 90),
                     child: ElevatedButton(
                         onPressed: () {
                           Navigator.push(
@@ -97,15 +104,12 @@ class AuthenticationScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
+                    padding: EdgeInsets.only(top: 2),
                     width: 350,
-                    padding: EdgeInsets.only(top: 5, bottom: 30),
                     child: ElevatedButton(
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => LoginScreen()),
-                          );
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text('Under Development')));
                         },
                         child: Text(
                           'Sign up',
