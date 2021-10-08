@@ -386,7 +386,7 @@ class SuccessScreen extends StatelessWidget {
                       children: [
                         Container(
                           width: 310,
-                          height: 30,
+                          height: 40,
                           child: ElevatedButton(
                             onPressed: () {
                               Navigator.pushReplacement(
@@ -395,18 +395,18 @@ class SuccessScreen extends StatelessWidget {
                                       builder: (context) => HomeScreen()));
                             },
                             child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
                               // ignore: prefer_const_literals_to_create_immutables
                               children: [
                                 Container(
-                                    alignment: Alignment.center,
                                     child: RichText(
-                                      text: TextSpan(
-                                        text: '>',
-                                        style: TextStyle(
-                                            fontSize: 20, color: Colors.white),
-                                        // ignore: prefer_const_literals_to_create_immutables
-                                      ),
-                                    )),
+                                  text: TextSpan(
+                                    text: '>',
+                                    style: TextStyle(
+                                        fontSize: 20, color: Colors.white),
+                                    // ignore: prefer_const_literals_to_create_immutables
+                                  ),
+                                )),
                               ],
                             ),
                             style: ButtonStyle(
