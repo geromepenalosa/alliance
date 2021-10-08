@@ -78,7 +78,7 @@ class AuthenticationScreen extends StatelessWidget {
                     width: 350,
                     child: ElevatedButton(
                         onPressed: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => LoginScreen()),
@@ -104,7 +104,6 @@ class AuthenticationScreen extends StatelessWidget {
                 ],
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
                     padding: EdgeInsets.only(top: 2),

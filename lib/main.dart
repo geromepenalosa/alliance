@@ -28,8 +28,8 @@ class MyApp extends StatelessWidget {
         splash: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-            image: AssetImage("assets/images/Alliance_Logo.png"),
-            scale: 17.0,
+            image: AssetImage("assets/images/alliance_logo_2.png"),
+            scale: 80.0,
             fit: BoxFit.contain,
           )),
         ),

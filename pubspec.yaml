@@ -1,3 +1,4 @@
+
 name: alliance
 description: A new Flutter project.
 
@@ -31,11 +32,17 @@ dependencies:
     sdk: flutter
 
   animated_splash_screen :
+  flutter_launcher_icons : "^0.9.0"
+  intl: ^0.17.0
+flutter_icons:
+  image_path: "assets/images/alliance_logo_2.png" 
+  android: true
+  ios: false
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
+
 
 dev_dependencies:
   flutter_test:

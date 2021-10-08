@@ -1,6 +1,12 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:math';
+
+import 'package:alliance/account_data.dart';
 import 'package:alliance/home_screen.dart';
+import 'package:alliance/success_screen.dart';
+import 'package:alliance/transactions.dart';
+import 'package:intl/intl.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -8,18 +14,32 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 
+final transferAmount = TextEditingController();
+final transferAccountNumber = TextEditingController();
+final transferAccountName = TextEditingController();
+final transferNote = TextEditingController();
+final formGlobalKey = GlobalKey<FormState>();
+
+final String transactionDate = DateFormat("yyyy-MM-dd").format(DateTime.now());
+
+transactionNumber() {
+  var random = new Random();
+  int min = 1000000000;
+  int max = 2000000000;
+  num number = min + random.nextInt(max - min);
+  return number;
+}
+
+int value = transactionNumber();
+
 /// This is the main application widget.
 class TransferScreen extends StatelessWidget {
-  TransferScreen({Key? key}) : super(key: key);
-
-  static const String _title = 'Transfer Screen';
-  int money = 0;
+  const TransferScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: _title,
       home: MyStatefulWidget(),
     );
   }
@@ -61,12 +81,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   setState(() {
                     _selectedIndex = index;
                     if (index == 0) {
-                      setState(() {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => HomeScreen()),
-                        );
-                      });
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()),
+                      );
                     } else if (index == 1) {
                       Navigator.push(
                         context,
@@ -121,7 +139,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 ],
               ),
               const VerticalDivider(thickness: 1, width: 4),
-              // Main Content
+              // Main Conttent
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(10),
@@ -143,23 +161,25 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                         ),
                         Row(
                           children: [
-                            Container(
-                              width: 290,
-                              height: 70,
-                              child: ElevatedButton(
-                                onPressed: () {},
-                                child: Text(
-                                  'Selected Card                       ***1234',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontFamily: 'Montserrat-Bold',
-                                      fontWeight: FontWeight.w800),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height / 13,
+                              width: MediaQuery.of(context).size.width / 1.33,
+                              child: Container(
+                                child: ElevatedButton(
+                                  onPressed: () {},
+                                  child: Text(
+                                    'Selected Card                       ***1234',
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontFamily: 'Montserrat-Bold',
+                                        fontWeight: FontWeight.w800),
+                                  ),
+                                  style: ButtonStyle(
+                                      shape: MaterialStateProperty.all(
+                                          RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(20)))),
                                 ),
-                                style: ButtonStyle(
-                                    shape: MaterialStateProperty.all(
-                                        RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(20)))),
                               ),
                             ),
                           ],
@@ -212,7 +232,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                             padding: EdgeInsets.only(top: 1),
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              'Current Balance: 12000',
+                              'Current Balance:' +
+                                  account.accountOwnerBalance.toString(),
                               style: TextStyle(
                                   color: Color(0xff1473FB), fontSize: 12),
                             )),
@@ -222,16 +243,27 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                               padding: EdgeInsets.only(top: 10),
                               width: 50.0,
                             ),
-                            TextField(
-                              style: TextStyle(
-                                fontFamily: 'Montserrat-Regular',
-                                fontSize: 15,
-                                height: 1.0,
+                            Form(
+                              key: formGlobalKey,
+                              child: TextFormField(
+                                controller: transferAmount,
+                                style: TextStyle(
+                                  fontFamily: 'Montserrat-Regular',
+                                  fontSize: 15,
+                                  height: 1.0,
+                                ),
+                                decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(15))),
+                                keyboardType: TextInputType.number,
+                                validator: (value) =>
+                                    double.parse(value!) > 200 &&
+                                            double.parse(value) <=
+                                                account.accountOwnerBalance
+                                        ? null
+                                        : '',
                               ),
-                              decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(15))),
-                              keyboardType: TextInputType.number,
                             )
                           ],
                         ),
@@ -253,6 +285,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                               width: 50.0,
                             ),
                             TextField(
+                              controller: transferAccountNumber,
                               maxLength: 12,
                               style: TextStyle(
                                 fontSize: 15,
@@ -280,6 +313,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                               width: 50.0,
                             ),
                             TextField(
+                              controller: transferAccountName,
                               style: TextStyle(
                                 fontSize: 15,
                                 height: 1.0,
@@ -308,6 +342,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                               width: 50.0,
                             ),
                             TextField(
+                              controller: transferNote,
                               style: TextStyle(
                                 fontSize: 15,
                                 height: 1.0,
@@ -322,30 +357,85 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                           height: MediaQuery.of(context).size.height / 50,
                         ),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Container(width: 60),
-                            ElevatedButton(
-                              onPressed: () {
-                                Navigator.pop(
-                                  context,
-                                );
-                              },
-                              child: Text('<'),
-                              style: ButtonStyle(
-                                  shape: MaterialStateProperty.all(
-                                      RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(15)))),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height / 20,
+                              width: MediaQuery.of(context).size.width / 3,
+                              child: Container(
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                HomeScreen()));
+                                  },
+                                  child: Text('<'),
+                                  style: ButtonStyle(
+                                      shape: MaterialStateProperty.all(
+                                          RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(15)))),
+                                ),
+                              ),
                             ),
-                            Container(width: 60),
-                            ElevatedButton(
-                              onPressed: () {},
-                              child: Text('>'),
-                              style: ButtonStyle(
-                                  shape: MaterialStateProperty.all(
-                                      RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(15)))),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width / 50,
+                            ),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height / 20,
+                              width: MediaQuery.of(context).size.width / 2.75,
+                              child: Container(
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    if (formGlobalKey.currentState!
+                                        .validate()) {
+                                      userTransactions.add(
+                                          // ignore: unnecessary_new
+                                          new TransactionRecorder(
+                                              name: transferAccountName.text,
+                                              transactionType: 'Transfer',
+                                              transactionDate:
+                                                  transactionDate.toString(),
+                                              transactionAmount: int.parse(
+                                                  transferAmount.text),
+                                              transactionNumber:
+                                                  numberGenerator(),
+                                              accountBalance:
+                                                  account.accountOwnerBalance));
+
+                                      account.transfer(
+                                          double.parse(transferAmount.text));
+                                      Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => SuccessScreen(
+                                                  transactionAmount:
+                                                      transferAmount.text,
+                                                  transactionAccountNumber:
+                                                      transferAccountNumber
+                                                          .text,
+                                                  transcationReceiver:
+                                                      transferAccountName.text,
+                                                  transactionNote:
+                                                      transferNote.text,
+                                                )),
+                                      );
+                                    } else {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(SnackBar(
+                                              content: Text('Invalid Input')));
+                                    }
+                                  },
+                                  child: Text('>'),
+                                  style: ButtonStyle(
+                                      shape: MaterialStateProperty.all(
+                                          RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(15)))),
+                                ),
+                              ),
                             )
                           ],
                         ),
